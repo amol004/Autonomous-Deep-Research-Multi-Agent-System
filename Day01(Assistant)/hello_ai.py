@@ -27,3 +27,8 @@ print(138*"=")
 print(response.choices[0].message.content)
 print(138*"=")
 
+
+
+#git add .
+#git commit -m "Your commit message"
+#git push

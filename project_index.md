@@ -19,3 +19,10 @@ This directory is intended for work related to adding memory capabilities to the
 
 ### `.vscode/`
 *   Contains Visual Studio Code workspace settings and configurations for this project.
+
+
+
+
+git add .
+git commit -m "Your commit message"
+git push
