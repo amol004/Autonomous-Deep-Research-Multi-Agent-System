@@ -29,6 +29,3 @@ print(138*"=")
 
 
 
-#git add .
-#git commit -m "Your commit message"
-#git push
