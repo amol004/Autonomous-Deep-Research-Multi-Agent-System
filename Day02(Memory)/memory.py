@@ -14,12 +14,12 @@ client = OpenAI(
 print("=" * 40)
 print("      My AI Assistant")
 print("=" * 40)
-messages = []
+msg = []
 while True:
 
     user_input = input("\nYou : ")
     # Save the user's message
-    messages.append(
+    msg.append(
         {
             "role": "user",
             "content": user_input
@@ -29,18 +29,18 @@ while True:
     if user_input.lower() == "quit":
         print("\nAI  : Goodbye! Have a great day.")
         break
-
+    # generate ai reply
     response = client.chat.completions.create(
         model=os.getenv("MODEL"),
-        messages=messages
+        messages=msg
     )
-
+    
     ai_reply = response.choices[0].message.content
 
     print("\nAI :", ai_reply)
 
     # Save the AI's reply
-    messages.append(
+    msg.append(
         {
             "role": "assistant",
             "content": ai_reply

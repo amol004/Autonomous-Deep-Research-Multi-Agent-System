@@ -52,3 +52,6 @@ while True:
 
       # Print the AI's response to the console, extracting the text content from the API response object
       print("\nAI : ", response.choices[0].message.content)
+
+
+# git add . && git commit -m "fixed memory.py" && git push
