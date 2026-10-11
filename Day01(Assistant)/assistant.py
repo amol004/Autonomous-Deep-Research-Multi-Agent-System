@@ -54,4 +54,4 @@ while True:
       print("\nAI : ", response.choices[0].message.content)
 
 
-# git add . && git commit -m "fixed memory.py" && git push
+# git add . && git commit -m "Debug check" && git push

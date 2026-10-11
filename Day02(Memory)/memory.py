@@ -47,5 +47,10 @@ while True:
         }
     )
 
+# Chat History
+print("\n*******************Chat History************************")
 
+for m in msg:
+    print(f"{m['role']} : {m['content']}")
 
+print("\n*******************End of Chat History******************")
