@@ -5,20 +5,20 @@ This file keeps track of every file and directory in this project to help unders
 ## Directory Structure
 
 ### `Day01(Assistant)/`
-This directory contains the initial work related to building a basic AI assistant.
-*   **`.env`**: Contains environment variables, such as API keys required for the assistant to function. (Make sure this is not checked into version control).
-*   **`hello_ai.py`**: A basic script to test the setup and connection to the AI model. It likely contains a simple "Hello World" equivalent for AI.
-*   **`assistant.py`**: The main script for the Day 01 assistant implementation.
+This folder contains our first steps in creating a simple AI assistant.
+*   **`.env`**: Stores secret settings, like your API keys and model details, so they are not shared publicly on GitHub.
+*   **`hello_ai.py`**: A simple test script. It sends one question to the AI model ("Explain AI in 200 words") and prints the answer to make sure the connection works.
+*   **`assistant.py`**: A basic chatbot in the terminal that lets you talk to the AI continuously until you type `"quit"`. It answers one message at a time without remembering past questions.
 
 ### `Day02(Memory)/`
-This directory contains the implementation of chat memory and persistent context for the AI assistant.
-*   **`memory.py`**: Interactive chatbot loop maintaining message history in conversation context.
+This folder adds memory so the AI can remember past conversations.
+*   **`memory.py`**: A chatbot that remembers past messages in the chat. In Day 01, the assistant forgot previous chats after each question. Here, both our messages and the AI's replies are saved in a list (`messages`) and sent back each time, so the AI remembers the conversation until you type `"quit"`.
 
 ### `.venv/`
-*   The Python virtual environment for the project, containing all installed dependencies.
+*   The virtual environment folder where all installed Python packages (like `openai` and `python-dotenv`) are kept separate from your main system.
 
 ### `.vscode/`
-*   Contains Visual Studio Code workspace settings and configurations (ignored in version control).
+*   Contains settings and preferences for VS Code (kept on your computer and ignored by Git).
 
 ---
 
