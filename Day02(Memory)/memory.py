@@ -14,7 +14,7 @@ client = OpenAI(
 print("=" * 40)
 print("      My AI Assistant")
 print("=" * 40)
-msg = []
+msg = [{"role":"system","content":"Act like a maths teacher"}]
 while True:
 
     user_input = input("\nYou : ")
@@ -51,6 +51,6 @@ while True:
 print("\n*******************Chat History************************")
 
 for m in msg:
-    print(f"\n{m}")
+    print(f"{m['role']} : {m['content']}")
 
 print("\n*******************End of Chat History******************")
