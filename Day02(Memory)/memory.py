@@ -14,7 +14,18 @@ client = OpenAI(
 print("=" * 40)
 print("      My AI Assistant")
 print("=" * 40)
-msg = [{"role":"system","content":"Act like a maths teacher"}]
+
+# Role selection
+roles = {"1":"Act like a maths teacher", "2":"Act like a physics teacher", "3":"Act like a chemistry teacher"}
+print("1. Maths teacher")
+print("2. Physics teacher")
+print("3. Chemistry teacher")
+
+# User input
+role = input("Enter your role : ")
+
+msg = [{"role":"system","content":roles[role]}]
+
 while True:
 
     user_input = input("\nYou : ")
