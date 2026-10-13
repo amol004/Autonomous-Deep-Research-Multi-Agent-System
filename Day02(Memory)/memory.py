@@ -15,16 +15,8 @@ print("=" * 40)
 print("      My AI Assistant")
 print("=" * 40)
 
-# Role selection
-roles = {"1":"Act like a maths teacher", "2":"Act like a physics teacher", "3":"Act like a chemistry teacher"}
-print("1. Maths teacher")
-print("2. Physics teacher")
-print("3. Chemistry teacher")
 
-# User input
-choice = input("Enter your role : ")
-
-msg = [{"role":"system","content":roles.get(choice,"Act like a maths teacher")}]
+msg = []
 
 while True:
 
@@ -37,7 +29,7 @@ while True:
         }
     )
 
-    if user_input.lower() == "quit":
+    if user_input.lower() == "exit":
         print("\nAI  : Goodbye! Have a great day.")
         break
     # generate ai reply
@@ -48,7 +40,7 @@ while True:
     
     ai_reply = response.choices[0].message.content
 
-    print("\nAI :", ai_reply)
+    print(f"\nAI :{ai_reply}")
 
     # Save the AI's reply
     msg.append(
