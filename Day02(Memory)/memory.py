@@ -22,9 +22,9 @@ print("2. Physics teacher")
 print("3. Chemistry teacher")
 
 # User input
-role = input("Enter your role : ")
+choice = input("Enter your role : ")
 
-msg = [{"role":"system","content":roles[role]}]
+msg = [{"role":"system","content":roles.get(choice,"Act like a maths teacher")}]
 
 while True:
 
