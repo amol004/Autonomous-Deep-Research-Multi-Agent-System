@@ -14,6 +14,21 @@ This folder contains our first steps in creating a simple AI assistant.
 This folder adds memory so the AI can remember past conversations.
 *   **`memory.py`**: A chatbot that remembers past messages in the chat. In Day 01, the assistant forgot previous chats after each question. Here, both our messages and the AI's replies are saved in a list (`messages`) and sent back each time, so the AI remembers the conversation until you type `"quit"`.
 
+### `Day03(Prompt_engineering))/`
+This folder explores prompt engineering and system instructions.
+*   **`system_prompts.py`**: An interactive assistant that uses system prompts to define persona and behavior. Users select a role (Maths teacher, Physics teacher, or Chemistry teacher), which sets the `"system"` message instruction. Maintains conversational memory throughout the session and prints the full chat history with role tags upon typing `"exit"`.
+
+### `Day04(Tools)/`
+This folder covers function calling and tool usage for AI agents.
+*   **`tools.py`**: Implementation of agent tools and function calling, allowing the AI model to interact with external tools and execute custom Python functions.
+
+### Root Files & Utilities
+*   **`start_mlx_server.py`**: Helper script to launch a local MLX model server (hosting `Qwen/Qwen3-1.7B-MLX-4bit` on Apple Silicon) exposing an OpenAI-compatible API on port 8080.
+*   **`lmx_testing.py`**: Test script for verifying local model inference directly via `mlx_lm.load` and `mlx_lm.generate`.
+*   **`requirements.txt`**: Contains all installed Python packages and dependencies for the project.
+*   **`pyrefly.toml`**: Environment and type-checker configuration.
+*   **`git.txt`**: Quick reference cheat-sheet for daily git workflow commands.
+
 ### `.venv/`
 *   The virtual environment folder where all installed Python packages (like `openai` and `python-dotenv`) are kept separate from your main system.
 

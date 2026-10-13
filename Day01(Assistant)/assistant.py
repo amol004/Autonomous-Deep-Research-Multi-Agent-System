@@ -54,4 +54,3 @@ while True:
       print("\nAI : ", response.choices[0].message.content)
 
 
-# git add . && git commit -m "Prompt engineering" && git push
