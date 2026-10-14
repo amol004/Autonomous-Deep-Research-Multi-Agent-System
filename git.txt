@@ -1,1 +1,1 @@
-git add . && git commit -m "write your message" && git push
+git add . && git commit -m "Sample tools testing" && git push
