@@ -1,7 +1,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
-
+from tools import get_curent_time, roll_dice, generate_password
 # Load configuration
 load_dotenv()
 
@@ -15,12 +15,33 @@ print("=" * 40)
 print("      My AI Assistant")
 print("=" * 40)
 
+# Role selection
+roles = {"1":"Act like a maths teacher", "2":"Act like a physics teacher", "3":"Act like a chemistry teacher"}
+print("1. Maths teacher")
+print("2. Physics teacher")
+print("3. Chemistry teacher")
 
-msg = []
+# User input
+choice = input("Enter your role : ")
+
+msg = [{"role":"system","content":roles.get(choice,"Act like a maths teacher")}]
 
 while True:
 
     user_input = input("\nYou : ")
+    
+
+    # tool calling
+
+    if "time" in user_input.lower():
+        print("\nAI : Current time is : ",get_curent_time())
+        continue 
+    if "roll dice" in user_input.lower():
+        print("\nAI : Dice rolled : ",roll_dice())
+        continue 
+    if "generate password" in user_input.lower():
+        print("\nAI : Password generated : ",generate_password(10))
+        continue 
     # Save the user's message
     msg.append(
         {

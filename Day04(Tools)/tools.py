@@ -1,4 +1,5 @@
 import random
+import secrets
 from datetime import datetime
 
 
@@ -22,13 +23,10 @@ def generate_password(length : int)-> str:
       """
       Generates a random password of the specified length
       """
-      letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()'
-      password = ''.join(random.choice(letters) for i in range(length))
+      letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-={}[]|\\:;"\'<>?,./~`'
+      password = ''.join(secrets.choice(letters) for i in range(length))
+    
       return password
-
-
-
-
 
 
 
