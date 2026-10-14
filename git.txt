@@ -1,3 +1,0 @@
-git add . && git commit -m "Sample tools testing" && git push
-
-git add . && git commit -m "Sample tools testing" && git push
