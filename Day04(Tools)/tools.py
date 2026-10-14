@@ -25,7 +25,8 @@ def generate_password(length : int)-> str:
       letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()'
       password = ''.join(random.choice(letters) for i in range(length))
       return password
-      
+
+
 
 
 

@@ -4,3 +4,4 @@ print(get_curent_time())
 print(roll_dice())
 print(generate_password())
 
+
