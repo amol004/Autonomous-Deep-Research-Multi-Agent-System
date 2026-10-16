@@ -1,9 +1,8 @@
-from tools import get_curent_time, roll_dice, generate_password
 
-print(get_curent_time())
+
+
+from tools import get_current_time,roll_dice,generate_password
+
+print(get_current_time())
 print(roll_dice())
-print(generate_password(10))
-
-
-
-
+print(generate_password())

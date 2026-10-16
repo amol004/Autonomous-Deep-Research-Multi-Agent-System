@@ -14,13 +14,21 @@ This folder contains our first steps in creating a simple AI assistant.
 This folder adds memory so the AI can remember past conversations.
 *   **`memory.py`**: A chatbot that remembers past messages in the chat. In Day 01, the assistant forgot previous chats after each question. Here, both our messages and the AI's replies are saved in a list (`messages`) and sent back each time, so the AI remembers the conversation until you type `"quit"`.
 
-### `Day03(Prompt_engineering))/`
+### `Day03(Prompt_engineering)/`
 This folder explores prompt engineering and system instructions.
 *   **`system_prompts.py`**: An interactive assistant that uses system prompts to define persona and behavior. Users select a role (Maths teacher, Physics teacher, or Chemistry teacher), which sets the `"system"` message instruction. Maintains conversational memory throughout the session and prints the full chat history with role tags upon typing `"exit"`.
 
 ### `Day04(Tools)/`
-This folder covers function calling and tool usage for AI agents.
-*   **`tools.py`**: Implementation of agent tools and function calling, allowing the AI model to interact with external tools and execute custom Python functions.
+This folder covers custom tool development, keyword-based tool execution/routing, and integrating external tools with conversational AI assistants.
+*   **`tools.py`**: Implements custom utility functions acting as agent tools:
+    *   `get_current_time()`: Returns the current date and time formatted (`DD-MM-YYYY HH:MM:SS AM/PM`).
+    *   `roll_dice()`: Returns a random integer between 1 and 6.
+    *   `generate_password(length=12)`: Generates a cryptographically secure random password combining letters, digits, and punctuation using Python's `secrets` module.
+*   **`test_tools.py`**: Standalone testing script that executes and verifies each tool in `tools.py`.
+*   **`tool_manager.py`**: A centralized tool router / dispatcher (`execute_tool(user_input)`). It inspects the user prompt for keywords (e.g., time/clock, dice/die, password), runs the matching tool, and returns the result, or returns `None` if no matching tool is found.
+*   **`test_tool_manager.py`**: Test script validating intent detection and tool routing logic across different sample user queries.
+*   **`use_tools.py`**: Terminal-based AI assistant demonstrating early tool integration with teacher persona selection (Maths, Physics, Chemistry). Intercepts tool requests (`time`, `roll dice`, `generate password`) before calling the LLM, preserves conversation history, and outputs full chat logs upon typing `"exit"`.
+*   **`assistant.py`**: An interactive multi-persona AI assistant offering 5 selectable roles (Teacher, Python Expert, Travel Guide, Motivational Coach, Interviewer). Combines instant tool execution for time, dice, and password requests with contextual LLM conversation memory until `"quit"`.
 
 ### Root Files & Utilities
 *   **`start_mlx_server.py`**: Helper script to launch a local MLX model server (hosting `Qwen/Qwen3-1.7B-MLX-4bit` on Apple Silicon) exposing an OpenAI-compatible API on port 8080.
