@@ -6,3 +6,8 @@ __pycache__/
 *.env
 .agents/skills/gravitas/
 git.txt
+pyrefly.toml
+venv.txt
+skills-lock.json  
+lmx_testing.py 
+.agents/
