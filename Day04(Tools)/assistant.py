@@ -48,10 +48,7 @@ choice = input("\nEnter your choice : ")
 messages = [
     {
         "role": "system",
-        "content": roles.get(
-            choice,
-            "You are a helpful AI assistant."
-        )
+        "content": roles.get(choice,"You are a helpful AI assistant.")
     }
 ]
 
