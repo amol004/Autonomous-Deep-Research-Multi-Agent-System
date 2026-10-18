@@ -1,3 +1,5 @@
+
+
 from datetime import datetime
 
 def get_current_time():
@@ -5,12 +7,22 @@ def get_current_time():
 
     return datetime.now().strftime("%d-%m-%Y %I:%M:%S %p")
 
+
+
+
+
+
+
 import random
 
 def roll_dice():
     """Return a random number between 1 and 6."""
 
     return random.randint(1, 6)
+
+
+
+
 
 import secrets
 import string
