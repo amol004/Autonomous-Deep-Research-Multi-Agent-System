@@ -30,6 +30,20 @@ This folder covers custom tool development, keyword-based tool execution/routing
 *   **`use_tools.py`**: Terminal-based AI assistant demonstrating early tool integration with teacher persona selection (Maths, Physics, Chemistry). Intercepts tool requests (`time`, `roll dice`, `generate password`) before calling the LLM, preserves conversation history, and outputs full chat logs upon typing `"exit"`.
 *   **`assistant.py`**: An interactive multi-persona AI assistant offering 5 selectable roles (Teacher, Python Expert, Travel Guide, Motivational Coach, Interviewer). Combines instant tool execution for time, dice, and password requests with contextual LLM conversation memory until `"quit"`.
 
+### `Day05(Document_reading)/`
+This folder adds document reading capabilities to the AI assistant, allowing it to read, summarize, and explain `.txt` files from a local `Data/` folder.
+*   **`tools.py`**: Extends the tool set from Day 04 with a new `read_text_file(filename)` function that reads and returns the contents of a text file, with `FileNotFoundError` handling. Retains the existing `get_current_time()`, `roll_dice()`, and `generate_password()` tools.
+*   **`tool_manager.py`**: Same keyword-based tool router as Day 04 — dispatches `time`, `dice`, and `password` requests. Document commands (`summarize`, `explain`) are handled directly in `assistant.py` rather than through this router.
+*   **`test_file_tool.py`**: Quick standalone test to verify `read_text_file()` works by reading `data/python.txt`.
+*   **`test_tool_manager.py`**: Test script validating tool routing for time, dice, password, and verifying that non-tool queries (e.g., `"Explain Python"`, `"summarise"`) return `None`.
+*   **`assistant.py`**: The main interactive assistant — combines all previous features (persona selection, conversation memory, tool execution, markdown stripping) with two new document commands:
+    *   `summarize <filename>`: Reads the specified `.txt` file from the `Data/` folder and asks the AI to summarize it.
+    *   `explain <filename>`: Reads the specified `.txt` file and asks the AI to explain it in detail.
+    Both commands inject the file content into the conversation history so the AI can answer follow-up questions about the document.
+*   **`Data/`**: Folder containing sample text files for the assistant to read:
+    *   `notes.txt`: A sample notes document.
+    *   `project.txt`: A sample project specification document (Smart Library System).
+
 ### Root Files & Utilities
 *   **`start_mlx_server.py`**: Helper script to launch a local MLX model server (hosting `Qwen/Qwen3-1.7B-MLX-4bit` on Apple Silicon) exposing an OpenAI-compatible API on port 8080.
 *   **`lmx_testing.py`**: Test script for verifying local model inference directly via `mlx_lm.load` and `mlx_lm.generate`.

@@ -5,7 +5,9 @@ import os
 from tools import (
     get_current_time,
     roll_dice,
-    generate_password
+    generate_password,
+    read_text_file,
+    write_text_file 
 )
 
 from tool_manager import execute_tool
