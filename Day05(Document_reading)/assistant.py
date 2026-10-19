@@ -44,7 +44,9 @@ roles = {
 
     "4": "You are a motivational coach. Encourage the user and give practical advice with a positive attitude.",
 
-    "5": "You are a professional interviewer. Ask one interview question at a time and provide feedback after each answer."
+    "5": "You are a professional interviewer. Ask one interview question at a time and provide feedback after each answer.",
+
+    "6": "You are a helpful AI assistant, Who is expert in reading and understanding documents, give clear and concise answers, and don't add any extra information which is not present in the document,if asked something which is not present in the document then say i don't know"
 }
 
 
@@ -55,7 +57,7 @@ print("2. Python Expert")
 print("3. Travel Guide")
 print("4. Motivational Coach")
 print("5. Interviewer")
-
+print("6. Document Reader")
 choice = input("\nEnter your choice : ")
 
 messages = [
