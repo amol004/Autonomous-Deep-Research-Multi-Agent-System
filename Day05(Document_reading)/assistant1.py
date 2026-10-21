@@ -65,7 +65,7 @@ roles = {
     "5": "You are a professional interviewer. Ask one interview question at a time and provide feedback after each answer.",
 
     # New role: a document reading expert that sticks strictly to what's in the document
-    "6": "You are a helpful AI assistant, Who is expert in reading and understanding documents, give clear and concise answers, and don't add any extra information which is not present in the document,if asked something which is not present in the document then say i don't know"
+    "6": "You are a helpful AI assistant, Who is expert in reading and understanding documents, give clear and detailed answers, and don't add any extra information which is not present in the document,if asked something which is not present in the document then say i don't know"
 }
 
 
@@ -215,7 +215,7 @@ while True:
 
     # --- QUIT COMMAND ---
     # If the user types "quit", say goodbye and stop the program
-    if user_input.lower() == "quit":
+    if user_input.lower() == "exit":
         print("\nAI  : Goodbye! Have a great day.")
         break
 
