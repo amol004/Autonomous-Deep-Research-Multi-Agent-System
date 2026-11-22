@@ -142,3 +142,16 @@ Research results depend on both the model and the quality of its evidence. The a
 - Keep secrets in environment variables and record run events through structured logs.
 - Evaluate retrieval relevance and answer grounding, then use LLM-as-a-Judge scoring to review complete agent runs.
 
+## Report format
+
+A completed investigation is organized so a reader can move from the conclusion to the underlying evidence:
+
+1. **Executive summary** — the central answer and its main implications.
+2. **Research scope** — the question, assumptions, and boundaries used.
+3. **Key findings** — concise claims grouped by topic.
+4. **Supporting evidence** — source links or document references for each finding.
+5. **Conflicts and gaps** — disagreements between sources and questions the available evidence does not settle.
+6. **Research notes** — useful context retained for follow-up work.
+
+The dashboard shows task progress while the report is being prepared and displays the finished result when the review step is complete.
+
