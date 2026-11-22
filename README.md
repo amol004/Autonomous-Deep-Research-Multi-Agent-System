@@ -94,3 +94,50 @@ The course-specific frameworks, protocols, storage systems, deployment tools, an
 
 The day folders keep the examples easy to follow. The embedding utility handles `.pdf`, `.txt`, `.md`, `.py`, `.json`, `.csv`, and `.docx` files; DOCX extraction requires the optional `python-docx` package.
 
+## Setup
+
+Use Python 3.13 or later. Install the packages needed for the assistant and document utilities:
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install openai python-dotenv pypdf
+```
+
+For Word documents, install the optional parser:
+
+```bash
+python -m pip install python-docx
+```
+
+Create a `.env` file in the repository root and set the endpoint and model names available in your local runtime:
+
+```dotenv
+BASE_URL=http://localhost:11434/v1
+API_KEY=ollama
+MODEL=your-chat-model
+EMBEDDING_MODEL=embeddinggemma-2:740m
+```
+
+Ollama is the default local endpoint for the embedding utility. On an Apple Silicon Mac, `python start_mlx_server.py` starts the included MLX-LM chat server on port 8080; set `BASE_URL=http://localhost:8080/v1` when using it for chat. Use the Ollama endpoint when generating embeddings, because the included MLX helper serves chat completions. Keep API keys in `.env`, not in source files.
+
+## Run the examples
+
+Run commands from the repository root unless noted:
+
+```bash
+python "Day01(Assistant)/assistant.py"
+python "Day02(Memory)/memory.py"
+python "Day03(Prompt_engineering)/system_prompts.py"
+python "Day04(Tools)/assistant.py"
+python embedding.py "path/to/document.pdf"
+```
+
+For the document-reading assistant, run it from its folder so its sample files resolve correctly:
+
+```bash
+cd "Day05(Document_reading)"
+python assistant1.py
+```
+
