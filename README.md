@@ -35,3 +35,21 @@ flowchart TD
 
 The planner coordinates the work, while tools and document retrieval provide evidence for the final report.
 
+
+## Skills covered
+
+The course builds these skills progressively. Related ideas are grouped together here so each appears once.
+
+| Area | Skills |
+| --- | --- |
+| Python and LLM foundations | Python fundamentals, virtual environments, API configuration, local model setup with Ollama, and requests to OpenAI-compatible model endpoints |
+| Assistant behavior | System prompts, role-based assistants, prompt design, multi-turn conversation history, and conversational memory |
+| Tool engineering | Custom Python tools, request routing, tool selection, a centralized tool manager, file operations, and safe utility functions |
+| Documents and RAG | Text and document loading, multi-document knowledge bases, chunking, embeddings, keyword retrieval, semantic search, cosine similarity, grounded question answering, and advanced RAG |
+| Agent architecture | Task planning, reasoning, agent state, execution loops, tool use, and autonomous runs |
+| MCP integration | MCP architecture, clients and servers, connecting agents to tools, and access to external tools and data |
+| Multi-agent systems | Specialized agent roles, delegation, orchestration, and production-ready agent design |
+| Agent frameworks | LangChain, LangGraph, and CrewAI |
+| Research delivery | Research task execution, source verification, research notes, structured report generation, and application deployment |
+
+
