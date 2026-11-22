@@ -17,3 +17,21 @@ The system takes a research question through a repeatable workflow:
 
 The same workflow supports both open-ended research and questions grounded in a supplied document set.
 
+
+## Research workflow
+
+```mermaid
+flowchart TD
+    Q["Research question"] --> P["Planner"]
+    P --> O["Research orchestrator"]
+    O --> A["Specialist agents"]
+    O --> K["Document knowledge base"]
+    A --> T["Tools and MCP integrations"]
+    T --> E["Collected evidence"]
+    K --> E
+    E --> V["Verify findings and save notes"]
+    V --> R["Structured research report"]
+```
+
+The planner coordinates the work, while tools and document retrieval provide evidence for the final report.
+
