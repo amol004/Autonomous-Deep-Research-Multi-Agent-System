@@ -36,23 +36,34 @@ flowchart TD
 The planner coordinates the work, while tools and document retrieval provide evidence for the final report.
 
 
-## Skills covered
+## Course sections and skills
 
-The course builds these skills progressively. Related ideas are grouped together here so each appears once.
+This map covers all 22 sections of the course. When a topic returns later, the row focuses on what that section adds.
 
-| Area | Skills |
-| --- | --- |
-| Python and LLM foundations | Python fundamentals, virtual environments, API configuration, local model setup with Ollama, and requests to OpenAI-compatible model endpoints |
-| Assistant behavior | System prompts, role-based assistants, prompt design, multi-turn conversation history, and conversational memory |
-| Tool engineering | Custom Python tools, request routing, tool selection, a centralized tool manager, file operations, and safe utility functions |
-| Documents and RAG | Text and document loading, multi-document knowledge bases, chunking, embeddings, keyword retrieval, semantic search, cosine similarity, grounded question answering, and advanced RAG |
-| Agent architecture | Task planning, reasoning, agent state, execution loops, tool use, and autonomous runs |
-| MCP integration | MCP architecture, clients and servers, connecting agents to tools, and access to external tools and data |
-| Multi-agent systems | Specialized agent roles, delegation, orchestration, and production-ready agent design |
-| Agent frameworks | LangChain, LangGraph, and CrewAI |
-| Research delivery | Research task execution, source verification, research notes, structured report generation, and application deployment |
-
-
+| # | Course section | Skills covered |
+| --- | --- | --- |
+| 1 | Introduction | Project goals and the progression from a basic assistant to a research-agent platform |
+| 2 | Day 1: Build Your First AI Chatbot using Python | Python fundamentals, API calls, Ollama setup, virtual environments, configuration, and a terminal assistant in VS Code |
+| 3 | Day 2: Build an AI Assistant That Remembers: Conversation Memory | Role-tagged chat history, message persistence during a session, and inspecting assistant memory |
+| 4 | Day 3: Prompt Engineering: Teach Your AI Assistant How to Behave | System prompts, assistant personas, role selection, and configurable multi-role behavior |
+| 5 | Day 4: AI Tools: Teach Your AI Assistant to Use Tools | Custom Python tools, tool selection, reusable functions, request routing, and a centralized tool manager |
+| 6 | Day 5: Document AI: Teach Your AI Assistant to Read Files | File-reader tools, passing document text to an LLM, document summarization, explanation, and question answering |
+| 7 | Day 6: Build Your First RAG System | Multi-document knowledge bases, keyword retrieval, embeddings, semantic search, cosine similarity, and an end-to-end RAG pipeline |
+| 8 | Day 7: Build Your First AI Agent | Agent planning, choosing tools, and connecting a planner to an assistant |
+| 9 | Day 8: Model Context Protocol (MCP) | MCP architecture, client/server implementation, and connecting an agent planner to MCP tools |
+| 10 | Day 9: Building an Autonomous AI Agent | Agent state, autonomous execution loops, MCP executor, and agent runner |
+| 11 | Day 10: Advanced Agent Planning | LLM-based task decomposition, state-aware planning, task tracking, and answer generation |
+| 12 | Day 11: Memory Engineering | Persistent memory with SQLite, long-term memory extraction, and semantic memory |
+| 13 | Day 12: Advanced RAG | Metadata-aware chunks, overlap strategies, hybrid retrieval, re-ranking, FAISS and ChromaDB vector stores, and retrieval evaluation |
+| 14 | Day 13: MCP in Depth | Multiple MCP servers, tool registries and arguments, resources and prompts, remote HTTP transport, authentication, and authorization |
+| 15 | Day 14: Multi-Agent Systems & Orchestration | Manager/worker design, research/coding/review roles, agent communication, revision safeguards, sequential and parallel execution with asyncio |
+| 16 | Day 15: Making Our AI Agent Production-Ready | Central configuration, structured logging, retries, backoff, timeouts, secrets, validation, permissions, safe file access, prompt-injection defenses, and context/performance tuning |
+| 17 | Day 16: LangGraph | Graph state, planner/tool/answer nodes, conditional routing, human approval, checkpoints, and MCP tool integration |
+| 18 | Day 17: CrewAI | Agents, tasks, crews, hierarchical managers, crew memory, and MCP tool integration |
+| 19 | Day 18: Build Our AI Research Agent | Web search and webpage-reader tools, Ollama tool calling, research plans, structured notes, evidence verification, and reports |
+| 20 | Day 19: LangChain for Agent Engineers | Prompt templates, LCEL, LangChain tools and agents, MCP integration, and RAG retrieval |
+| 21 | Day 20: AI Agent Deployment | FastAPI, Pydantic validation, error handling, application lifecycle, health checks, Docker, Docker Compose, rate limiting, logging, and LLM-as-a-Judge evaluation |
+| 22 | Day 21: Capstone Project: Build the Research AI Agent Platform | HTML/CSS/JavaScript interface, API integration, dashboard, live progress streaming, and report presentation |
 
 ## Technology stack
 
