@@ -56,12 +56,12 @@ This map covers all 22 sections of the course. When a topic returns later, the r
 | 12 | Day 11: Memory Engineering | Persistent memory with SQLite, long-term memory extraction, and semantic memory |
 | 13 | Day 12: Advanced RAG | Metadata-aware chunks, overlap strategies, hybrid retrieval, re-ranking, FAISS and ChromaDB vector stores, and retrieval evaluation |
 | 14 | Day 13: MCP in Depth | Multiple MCP servers, tool registries and arguments, resources and prompts, remote HTTP transport, authentication, and authorization |
-| 15 | Day 14: Multi-Agent Systems & Orchestration | Manager/worker design, research/coding/review roles, agent communication, revision safeguards, sequential and parallel execution with asyncio |
-| 16 | Day 15: Making Our AI Agent Production-Ready | Central configuration, structured logging, retries, backoff, timeouts, secrets, validation, permissions, safe file access, prompt-injection defenses, and context/performance tuning |
+| 15 | Day 14: Multi-Agent Systems & Orchestration | Manager/worker design, research/coding/review roles, agent communication, bounded review loops, and sequential or parallel fan-out/fan-in execution with asyncio |
+| 16 | Day 15: Making Our AI Agent Production-Ready | Central configuration and model access, structured logging, retries, backoff, timeouts, secrets, validation, permissions, safe file access, prompt-injection defenses, context/performance tuning, and production architecture |
 | 17 | Day 16: LangGraph | Graph state, planner/tool/answer nodes, conditional routing, human approval, checkpoints, and MCP tool integration |
 | 18 | Day 17: CrewAI | Agents, tasks, crews, hierarchical managers, crew memory, and MCP tool integration |
 | 19 | Day 18: Build Our AI Research Agent | Web search and webpage-reader tools, Ollama tool calling, research plans, structured notes, evidence verification, and reports |
-| 20 | Day 19: LangChain for Agent Engineers | Prompt templates, LCEL, LangChain tools and agents, MCP integration, and RAG retrieval |
+| 20 | Day 19: LangChain for Agent Engineers | Prompt templates, LangChain Expression Language (LCEL), tools and tool calling, agents, framework-native state and memory, MCP integration, and RAG retrieval |
 | 21 | Day 20: AI Agent Deployment | FastAPI, Pydantic validation, error handling, application lifecycle, health checks, Docker, Docker Compose, rate limiting, logging, and LLM-as-a-Judge evaluation |
 | 22 | Day 21: Capstone Project: Build the Research AI Agent Platform | HTML/CSS/JavaScript interface, API integration, dashboard, live progress streaming, and report presentation |
 
