@@ -98,3 +98,26 @@ The system separates temporary working context from information that should rema
 
 This separation keeps the active prompt focused while allowing later tasks to reuse relevant context.
 
+## Technical skills and tools
+
+| Area | Skills, tools, and implementation details |
+| --- | --- |
+| Programming and development | Python 3.13, Python functions, lists, loops, JavaScript, `asyncio`, virtual environments, VS Code, project configuration, and environment variables |
+| LLM integration | Ollama, OpenAI-compatible LLM APIs and Python client, local model serving with MLX-LM, prompt engineering, system prompts, assistant personas, and model tool calling |
+| Tool engineering | Reusable Python functions, tool selection and routing, centralized tool management, argument handling, file-reader tools, date/time utilities, secure password generation, and controlled tool execution |
+| Document processing | Text, PDF, DOCX, Markdown, Python, JSON, and CSV inputs; `pypdf`; optional `python-docx`; text extraction, file metadata, and document normalization |
+| RAG and retrieval | Multi-document knowledge bases, keyword retrieval, chunking and overlap, metadata, embeddings, semantic search, cosine similarity, hybrid search, re-ranking, grounded Q&A, and retrieval-quality evaluation |
+| Vector databases | FAISS similarity search and ChromaDB collections and retrieval |
+| Agent planning and execution | Agent state, task decomposition, state-aware planning, tool selection, execution loops, MCP execution, agent runners, and answer generation |
+| MCP and integrations | MCP clients and servers, multiple-server connections, tool registries, tool arguments, resources, prompts, remote HTTP transport, authentication, and authorization |
+| Multi-agent orchestration | Manager-worker systems, research/coding/review roles, structured agent communication, iterative reviews, loop guards, sequential execution, parallel execution, and fan-out/fan-in |
+| LangGraph | Graph state, planner/tool/answer nodes, conditional edges, routing, MCP tools, human approval, and checkpointing |
+| CrewAI | Agents, tasks, crews, research/coding/review roles, hierarchical managers, crew memory, and MCP tools |
+| LangChain | Prompt templates, LangChain Expression Language (LCEL), chains, tools, tool calling, agents, MCP integration, RAG retrieval, and agent state and memory |
+| Research and reporting | Web search, webpage reading, research planning, structured notes, evidence verification, and structured report generation |
+| Backend APIs | FastAPI, Pydantic request schemas, input validation, error handling, centralized model configuration, liveness/readiness checks, and application lifecycle management |
+| Deployment and reliability | Docker, Docker Compose, retries, exponential backoff, timeouts, rate limiting, parallel execution, and context/model-call optimization |
+| Security | Secrets management, permissions, safe file access, tool-boundary validation, remote-service authorization, and prompt-injection protection |
+| Observability and evaluation | Structured logging, automated agent evaluation, retrieval and answer evaluation, and LLM-as-a-Judge |
+| Frontend | HTML, CSS, JavaScript, API integration, research dashboards, real-time progress streaming, and report presentation |
+
