@@ -43,12 +43,12 @@ The planner decomposes the request, the orchestrator assigns work, and the revie
 | Vector databases | FAISS and ChromaDB |
 | Agent architecture | Agent state, planning, task decomposition, execution loops, and tool management |
 | Protocols and integrations | MCP clients and servers, tool registries, remote HTTP transport, resources, prompts, authentication, and authorization |
-| Multi-agent orchestration | Manager-worker systems, specialist roles, parallel execution, fan-out/fan-in, and bounded review cycles |
+| Multi-agent orchestration | Manager-worker systems, specialist roles, parallel execution, fan-out/fan-in, and iterative review cycles with bounded termination |
 | Agent frameworks | LangChain, LangChain Expression Language (LCEL), LangGraph, and CrewAI |
 | Backend | FastAPI, Pydantic, request and tool validation, error handling, and health checks |
 | Deployment | Docker, Docker Compose, and application lifecycle management |
 | Reliability and security | Retries, backoff, timeouts, rate limiting, permissions, safe file access, and prompt-injection protection |
-| Observability and evaluation | Structured logging, retrieval and answer evaluation, and LLM-as-a-Judge |
+| Observability and evaluation | Structured logging, automated retrieval and answer evaluation, and LLM-as-a-Judge |
 | Frontend | HTML, CSS, JavaScript, research dashboards, and real-time progress streaming |
 
 ## Local setup
