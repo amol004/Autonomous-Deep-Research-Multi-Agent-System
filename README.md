@@ -131,3 +131,14 @@ The project keeps the agent behavior understandable while using frameworks where
 
 The same workflow supports direct Python implementations where a framework would add unnecessary indirection.
 
+## Reliability, security, and evaluation
+
+Research results depend on both the model and the quality of its evidence. The application therefore applies controls at the boundaries:
+
+- Validate API requests and tool arguments before execution.
+- Treat web pages and uploaded documents as untrusted content; never let retrieved text override system instructions.
+- Limit file access and external actions to explicitly permitted paths and tools.
+- Use timeouts, retries with backoff, rate limits, and bounded review loops to prevent stalled or runaway runs.
+- Keep secrets in environment variables and record run events through structured logs.
+- Evaluate retrieval relevance and answer grounding, then use LLM-as-a-Judge scoring to review complete agent runs.
+
