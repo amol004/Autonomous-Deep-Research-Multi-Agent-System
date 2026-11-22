@@ -65,16 +65,15 @@ This map covers all 22 sections of the course. When a topic returns later, the r
 | 21 | Day 20: AI Agent Deployment | FastAPI, Pydantic validation, error handling, application lifecycle, health checks, Docker, Docker Compose, rate limiting, logging, and LLM-as-a-Judge evaluation |
 | 22 | Day 21: Capstone Project: Build the Research AI Agent Platform | HTML/CSS/JavaScript interface, API integration, dashboard, live progress streaming, and report presentation |
 
-## Technology stack
+## Runtime and dependencies
 
-| Layer | Tools and technologies |
+| Purpose | Tools used |
 | --- | --- |
 | Language and environment | Python 3.13, VS Code, virtual environments, and `python-dotenv` |
-| Model access | OpenAI Python SDK with an OpenAI-compatible endpoint; Ollama for local models |
-| Local Apple Silicon serving | MLX-LM; the included server script starts `Qwen/Qwen3-1.7B-MLX-4bit` on port 8080 |
-| Document processing | `pypdf` for PDFs and optional `python-docx` support for Word files |
-| Embeddings | Ollama’s OpenAI-compatible embeddings endpoint and the configured `embeddinggemma-2:740m` model |
-| Agent interoperability and frameworks | Model Context Protocol (MCP), LangChain, LangGraph, and CrewAI |
+| Chat model access | OpenAI Python SDK with an OpenAI-compatible endpoint; Ollama for local chat and embeddings |
+| Apple Silicon option | MLX-LM; the included helper serves `Qwen/Qwen3-1.7B-MLX-4bit` on port 8080 |
+| Document extraction | `pypdf` for PDF files and optional `python-docx` for Word documents |
+| Embedding model | `embeddinggemma-2:740m`, configurable through `EMBEDDING_MODEL` |
 
-The course introduces the agent frameworks and MCP as ways to structure and connect agent workflows. The repository also includes small Python modules that show the underlying assistant, memory, tool, and document concepts directly.
+The course-specific frameworks, protocols, storage systems, deployment tools, and interface technologies are listed in the complete section map above.
 
