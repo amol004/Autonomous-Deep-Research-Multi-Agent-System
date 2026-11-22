@@ -19,3 +19,59 @@ Each run maintains its task state and research notes. The final response is buil
 - **Report delivery:** generates a structured report and streams progress to a browser dashboard.
 - **Service deployment:** exposes the research workflow through a validated API and a container-ready application design.
 
+## System architecture
+
+```mermaid
+flowchart TD
+    U["Research question"] --> UI["Research dashboard"]
+    UI --> API["FastAPI request layer"]
+    API --> P["Planner and agent state"]
+    P --> O["Manager and orchestrator"]
+    O --> RA["Research agent"]
+    O --> AA["Analysis agent"]
+    O --> RV["Reviewer"]
+    RA --> MCP["MCP tools and web sources"]
+    AA --> RAG["Document retrieval"]
+    MCP --> E["Evidence and research notes"]
+    RAG --> E
+    E --> RV
+    RV --> RG["Report generator"]
+    RG --> UI
+    O --> MEM["Persistent memory"]
+    MEM --> P
+```
+
+The planner records the investigation state and delegates work. Research and retrieval return source material to a shared evidence trail; the reviewer checks it before the report reaches the dashboard.
+
+## Research run lifecycle
+
+| Stage | Work performed |
+| --- | --- |
+| 1. Scope | Validate the request and identify its research goal, constraints, and expected output |
+| 2. Plan | Decompose the objective into tasks, dependencies, and an execution plan |
+| 3. Research | Use web search, webpage reading, MCP tools, and local-document retrieval to collect relevant material |
+| 4. Analyze | Combine retrieved evidence, update research notes, and identify agreement or conflict between sources |
+| 5. Review | Check that findings are supported, surface missing evidence, and request bounded revisions where needed |
+| 6. Synthesize | Produce an answer from the reviewed findings and retain relevant notes for later steps |
+| 7. Deliver | Return the report and stream task progress and results to the dashboard |
+
+## Document retrieval pipeline
+
+```mermaid
+flowchart TD
+    D["PDF, DOCX, and text files"] --> X["Extract text and metadata"]
+    X --> C["Chunk text with overlap"]
+    C --> EMB["Create embeddings"]
+    EMB --> V["FAISS or ChromaDB"]
+    Q["User question"] --> KW["Keyword retrieval"]
+    Q --> SEM["Semantic retrieval"]
+    V --> SEM
+    KW --> H["Hybrid result set"]
+    SEM --> H
+    H --> RR["Re-rank passages"]
+    RR --> CTX["Evidence context"]
+    CTX --> A["Grounded answer and source references"]
+```
+
+The retrieval layer supports keyword matching and semantic similarity. Hybrid search combines both result types, and re-ranking selects the passages most useful for answering the question.
+
