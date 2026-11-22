@@ -12,7 +12,7 @@ Each run maintains its task state and research notes. The final response is buil
 
 - **Research planning:** turns a broad question into smaller tasks and tracks each task through execution.
 - **Web research:** searches for sources and reads relevant webpages through controlled tools.
-- **Document question answering:** retrieves relevant passages from a collection of PDFs, Word files, and text documents.
+- **Document understanding:** reads, summarizes, and explains files, then retrieves relevant passages to answer questions grounded in a collection of PDFs, Word files, and text documents.
 - **Agent collaboration:** assigns research, analysis, and review work to specialized agents, sequentially or in parallel.
 - **Persistent context:** keeps conversation history, extracted facts, and research notes available across steps.
 - **Evidence review:** checks whether report claims are supported by retrieved sources and flags gaps.
