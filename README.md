@@ -51,3 +51,29 @@ The planner decomposes the request, the orchestrator assigns work, and the revie
 | Observability and evaluation | Structured logging, retrieval and answer evaluation, and LLM-as-a-Judge |
 | Frontend | HTML, CSS, JavaScript, research dashboards, and real-time progress streaming |
 
+## Local setup
+
+Use Python 3.13 or later. Create a virtual environment and install the packages needed by the local assistant and document utilities:
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install openai python-dotenv pypdf
+```
+
+Install `python-docx` to extract text from Word documents:
+
+```bash
+python -m pip install python-docx
+```
+
+Create a `.env` file in the repository root and configure the model endpoint and names available in your local runtime:
+
+```dotenv
+BASE_URL=http://localhost:11434/v1
+API_KEY=ollama
+MODEL=your-chat-model
+EMBEDDING_MODEL=embeddinggemma-2:740m
+```
+
