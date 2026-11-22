@@ -155,3 +155,47 @@ A completed investigation is organized so a reader can move from the conclusion 
 
 The dashboard shows task progress while the report is being prepared and displays the finished result when the review step is complete.
 
+## Local setup
+
+Use Python 3.13 or later. Create a virtual environment and install the packages used by the local assistant and document utilities:
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install openai python-dotenv pypdf
+```
+
+For Word document extraction, install the optional parser:
+
+```bash
+python -m pip install python-docx
+```
+
+Create a `.env` file in the repository root and configure the model endpoint and model names available in your runtime:
+
+```dotenv
+BASE_URL=http://localhost:11434/v1
+API_KEY=ollama
+MODEL=your-chat-model
+EMBEDDING_MODEL=embeddinggemma-2:740m
+```
+
+Ollama is the default local endpoint for chat and embeddings. On an Apple Silicon Mac, `python start_mlx_server.py` starts the included MLX-LM chat server on port 8080. Use the Ollama endpoint for embedding generation. Keep API keys in `.env` and do not commit that file.
+
+## Local utilities
+
+Generate embeddings for a supported document:
+
+```bash
+python embedding.py "path/to/document.pdf"
+```
+
+Start the included Apple Silicon chat server:
+
+```bash
+python start_mlx_server.py
+```
+
+The document utility supports `.pdf`, `.txt`, `.md`, `.py`, `.json`, `.csv`, and `.docx` inputs. DOCX extraction requires `python-docx`.
+
