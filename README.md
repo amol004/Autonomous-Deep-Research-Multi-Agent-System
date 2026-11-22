@@ -77,3 +77,20 @@ This map covers all 22 sections of the course. When a topic returns later, the r
 
 The course-specific frameworks, protocols, storage systems, deployment tools, and interface technologies are listed in the complete section map above.
 
+## Repository structure
+
+```text
+.
+├── Day01(Assistant)/              # First API-backed terminal assistant
+├── Day02(Memory)/                  # Multi-turn conversation history
+├── Day03(Prompt_engineering)/      # System prompts and selectable roles
+├── Day04(Tools)/                   # Python tools, routing, and tool manager
+├── Day05(Document_reading)/        # Text-file reading and document Q&A
+├── embedding.py                    # Load, chunk, and embed supported documents
+├── start_mlx_server.py             # Local MLX-LM server for Apple Silicon
+├── requirements.txt
+└── pyproject.toml
+```
+
+The day folders keep the examples easy to follow. The embedding utility handles `.pdf`, `.txt`, `.md`, `.py`, `.json`, `.csv`, and `.docx` files; DOCX extraction requires the optional `python-docx` package.
+
