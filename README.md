@@ -17,3 +17,24 @@ The system plans multi-step investigations, gathers evidence through tools and M
 | Production interface | Serves the agent through FastAPI and Pydantic, with a browser dashboard, live progress updates, and report viewing |
 
 
+
+## Architecture
+
+```mermaid
+flowchart TD
+    U["Research question"] --> W["Web dashboard"]
+    W --> API["FastAPI service"]
+    API --> P["Stateful planner"]
+    P --> O["Agent orchestrator"]
+    O --> R["Research and analysis agents"]
+    O --> K["Document retrieval"]
+    R --> M["MCP tools and web sources"]
+    M --> E["Evidence and research notes"]
+    K --> E
+    E --> V["Evidence reviewer"]
+    V --> G["Report generator"]
+    G --> S["Stream results to dashboard"]
+```
+
+The planner decomposes the request, the orchestrator assigns work, and the reviewer checks evidence before the report is returned.
+
