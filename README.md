@@ -53,3 +53,17 @@ The course builds these skills progressively. Related ideas are grouped together
 | Research delivery | Research task execution, source verification, research notes, structured report generation, and application deployment |
 
 
+
+## Technology stack
+
+| Layer | Tools and technologies |
+| --- | --- |
+| Language and environment | Python 3.13, VS Code, virtual environments, and `python-dotenv` |
+| Model access | OpenAI Python SDK with an OpenAI-compatible endpoint; Ollama for local models |
+| Local Apple Silicon serving | MLX-LM; the included server script starts `Qwen/Qwen3-1.7B-MLX-4bit` on port 8080 |
+| Document processing | `pypdf` for PDFs and optional `python-docx` support for Word files |
+| Embeddings | Ollama’s OpenAI-compatible embeddings endpoint and the configured `embeddinggemma-2:740m` model |
+| Agent interoperability and frameworks | Model Context Protocol (MCP), LangChain, LangGraph, and CrewAI |
+
+The course introduces the agent frameworks and MCP as ways to structure and connect agent workflows. The repository also includes small Python modules that show the underlying assistant, memory, tool, and document concepts directly.
+
