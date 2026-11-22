@@ -1,69 +1,19 @@
 # Autonomous Deep Research Multi-Agent System
 
-A Python research platform that turns a question into a structured, source-backed report. It brings together LLM assistants, conversation memory, reusable tools, document retrieval, agent planning, MCP, and multi-agent orchestration.
+A Python platform that turns a research question into a structured, source-backed report. It combines web research, document retrieval, specialized agents, evidence verification, persistent research notes, and a live report dashboard.
 
+The system plans multi-step investigations, gathers evidence through tools and MCP integrations, checks findings against their sources, and presents the results in a clear report.
 
+## Capabilities
 
-
-## What the platform does
-
-The system takes a research question through a repeatable workflow:
-
-- Breaks the question into focused research tasks.
-- Uses specialized agents and tools to gather relevant information.
-- Retrieves supporting passages from an ingested document collection.
-- Keeps research state and notes available across steps.
-- Checks findings against their sources and turns them into a structured report.
-
-The same workflow supports both open-ended research and questions grounded in a supplied document set.
-
-
-## Research workflow
-
-```mermaid
-flowchart TD
-    Q["Research question"] --> P["Planner"]
-    P --> O["Research orchestrator"]
-    O --> A["Specialist agents"]
-    O --> K["Document knowledge base"]
-    A --> T["Tools and MCP integrations"]
-    T --> E["Collected evidence"]
-    K --> E
-    E --> V["Verify findings and save notes"]
-    V --> R["Structured research report"]
-```
-
-The planner coordinates the work, while tools and document retrieval provide evidence for the final report.
-
-
-## Skills covered
-
-The course builds these skills progressively. Related ideas are grouped together here so each appears once.
-
-| Area | Skills |
+| Capability | What it does |
 | --- | --- |
-| Python and LLM foundations | Python fundamentals, virtual environments, API configuration, local model setup with Ollama, and requests to OpenAI-compatible model endpoints |
-| Assistant behavior | System prompts, role-based assistants, prompt design, multi-turn conversation history, and conversational memory |
-| Tool engineering | Custom Python tools, request routing, tool selection, a centralized tool manager, file operations, and safe utility functions |
-| Documents and RAG | Text and document loading, multi-document knowledge bases, chunking, embeddings, keyword retrieval, semantic search, cosine similarity, grounded question answering, and advanced RAG |
-| Agent architecture | Task planning, reasoning, agent state, execution loops, tool use, and autonomous runs |
-| MCP integration | MCP architecture, clients and servers, connecting agents to tools, and access to external tools and data |
-| Multi-agent systems | Specialized agent roles, delegation, orchestration, and production-ready agent design |
-| Agent frameworks | LangChain, LangGraph, and CrewAI |
-| Research delivery | Research task execution, source verification, research notes, structured report generation, and application deployment |
+| Research planning | Breaks complex questions into trackable tasks with a state-aware planner and generates answers from completed work |
+| Multi-agent execution | Coordinates Research, Analysis, and Review agents through manager/worker workflows, bounded review loops, and sequential or parallel execution |
+| Web and tool access | Uses search and webpage-reading tools, custom Python functions, MCP servers, a shared tool registry, and remote HTTP integrations |
+| Document-grounded answers | Extracts text from research documents, creates metadata-aware chunks and embeddings, combines keyword and semantic retrieval, reranks results, and uses FAISS or ChromaDB to find supporting passages |
+| Persistent research memory | Stores conversation state and research notes in SQLite, extracts durable facts, and retrieves relevant semantic memories |
+| Evidence and reporting | Checks claims against retrieved sources, retains evidence and notes, and produces structured research reports |
+| Production interface | Serves the agent through FastAPI and Pydantic, with a browser dashboard, live progress updates, and report viewing |
 
-
-
-## Technology stack
-
-| Layer | Tools and technologies |
-| --- | --- |
-| Language and environment | Python 3.13, VS Code, virtual environments, and `python-dotenv` |
-| Model access | OpenAI Python SDK with an OpenAI-compatible endpoint; Ollama for local models |
-| Local Apple Silicon serving | MLX-LM; the included server script starts `Qwen/Qwen3-1.7B-MLX-4bit` on port 8080 |
-| Document processing | `pypdf` for PDFs and optional `python-docx` support for Word files |
-| Embeddings | Ollama’s OpenAI-compatible embeddings endpoint and the configured `embeddinggemma-2:740m` model |
-| Agent interoperability and frameworks | Model Context Protocol (MCP), LangChain, LangGraph, and CrewAI |
-
-The course introduces the agent frameworks and MCP as ways to structure and connect agent workflows. The repository also includes small Python modules that show the underlying assistant, memory, tool, and document concepts directly.
 
