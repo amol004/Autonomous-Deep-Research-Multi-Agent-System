@@ -77,3 +77,19 @@ MODEL=your-chat-model
 EMBEDDING_MODEL=embeddinggemma-2:740m
 ```
 
+## Local utilities
+
+Generate embeddings for a supported document:
+
+```bash
+python embedding.py "path/to/document.pdf"
+```
+
+On an Apple Silicon Mac, start the included MLX-LM chat server with:
+
+```bash
+python start_mlx_server.py
+```
+
+The MLX-LM helper serves the configured chat model on port 8080. Ollama remains the default endpoint for embedding generation.
+
