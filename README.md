@@ -121,3 +121,13 @@ This separation keeps the active prompt focused while allowing later tasks to re
 | Observability and evaluation | Structured logging, automated agent evaluation, retrieval and answer evaluation, and LLM-as-a-Judge |
 | Frontend | HTML, CSS, JavaScript, API integration, research dashboards, real-time progress streaming, and report presentation |
 
+## Framework patterns
+
+The project keeps the agent behavior understandable while using frameworks where they add useful structure:
+
+- **LangGraph** models the agent as a stateful graph. Planner, tool, and answer nodes are connected through conditional routes. Checkpoints preserve progress, and human approval can pause an action before execution.
+- **CrewAI** groups specialized agents into tasks and crews. A hierarchical manager can delegate work, while crew memory and MCP tools provide shared context and external actions.
+- **LangChain** provides reusable prompt templates and LCEL chains. Tools, tool-calling agents, RAG retrieval, MCP integrations, and framework-managed state connect into the research workflow.
+
+The same workflow supports direct Python implementations where a framework would add unnecessary indirection.
+
