@@ -75,3 +75,26 @@ flowchart TD
 
 The retrieval layer supports keyword matching and semantic similarity. Hybrid search combines both result types, and re-ranking selects the passages most useful for answering the question.
 
+## Agent responsibilities
+
+| Agent or component | Responsibility |
+| --- | --- |
+| Planner | Understands the request, decomposes it into tasks, and updates the task state |
+| Manager / orchestrator | Assigns work, selects sequential or parallel execution, and keeps the investigation within defined limits |
+| Research agent | Searches the web, reads pages, and records source-linked notes |
+| Analysis or coding agent | Extracts information, compares evidence, and uses approved tools for focused subtasks |
+| Reviewer / evidence verifier | Checks claims against evidence, identifies conflicts, and returns targeted revision requests |
+| Report generator | Organizes reviewed findings into a clear summary with supporting sources and open questions |
+
+## Memory and agent state
+
+The system separates temporary working context from information that should remain available after a run:
+
+- **Conversation state** stores role-tagged user and assistant messages for the active interaction.
+- **Persistent memory** records useful facts and research notes in SQLite.
+- **Memory extraction** identifies information worth retaining instead of saving every message as long-term memory.
+- **Semantic memory** makes stored facts and notes retrievable by meaning when a later task needs them.
+- **Agent state** tracks tasks, tool results, review feedback, and the current point in the execution loop.
+
+This separation keeps the active prompt focused while allowing later tasks to reuse relevant context.
+
