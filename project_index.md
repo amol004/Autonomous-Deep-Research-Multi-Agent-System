@@ -4,58 +4,33 @@ This file keeps track of every file and directory in this project to help unders
 
 ## Directory Structure
 
-### `Day01(Assistant)/`
-This folder contains our first steps in creating a simple AI assistant.
-*   **`.env`**: Stores secret settings, like your API keys and model details, so they are not shared publicly on GitHub.
-*   **`hello_ai.py`**: A simple test script. It sends one question to the AI model ("Explain AI in 200 words") and prints the answer to make sure the connection works.
-*   **`assistant.py`**: A basic chatbot in the terminal that lets you talk to the AI continuously until you type `"quit"`. It answers one message at a time without remembering past questions.
+This index reflects files tracked in the repository. Local-only folders such as `.venv/` and `.vscode/` are not part of the tracked tree.
 
-### `Day02(Memory)/`
-This folder adds memory so the AI can remember past conversations.
-*   **`memory.py`**: A chatbot that remembers past messages in the chat. In Day 01, the assistant forgot previous chats after each question. Here, both our messages and the AI's replies are saved in a list (`messages`) and sent back each time, so the AI remembers the conversation until you type `"quit"`.
+### Learning examples
 
-### `Day03(Prompt_engineering)/`
-This folder explores prompt engineering and system instructions.
-*   **`system_prompts.py`**: An interactive assistant that uses system prompts to define persona and behavior. Users select a role (Maths teacher, Physics teacher, or Chemistry teacher), which sets the `"system"` message instruction. Maintains conversational memory throughout the session and prints the full chat history with role tags upon typing `"exit"`.
+- `Day01(Assistant)/`: `assistant.py`, `hello_ai.py`
+- `Day02(Memory)/`: `memory.py`
+- `Day03(Prompt_engineering)/`: `system_prompts.py`
+- `Day04(Tools)/`: `assistant.py`, `test_tool_manager.py`, `test_tools.py`, `tool_manager.py`, `tools.py`
+- `Day05(Document_reading)/`: `assistant1.py`, `test_file_tool.py`, `test_tool_manager.py`, `tool_manager.py`, `tools.py`
+  - `Data/`: `notes.txt`, `project.txt`, `sample.pdf`
 
-### `Day04(Tools)/`
-This folder covers custom tool development, keyword-based tool execution/routing, and integrating external tools with conversational AI assistants.
-*   **`tools.py`**: Implements custom utility functions acting as agent tools:
-    *   `get_current_time()`: Returns the current date and time formatted (`DD-MM-YYYY HH:MM:SS AM/PM`).
-    *   `roll_dice()`: Returns a random integer between 1 and 6.
-    *   `generate_password(length=12)`: Generates a cryptographically secure random password combining letters, digits, and punctuation using Python's `secrets` module.
-*   **`test_tools.py`**: Standalone testing script that executes and verifies each tool in `tools.py`.
-*   **`tool_manager.py`**: A centralized tool router / dispatcher (`execute_tool(user_input)`). It inspects the user prompt for keywords (e.g., time/clock, dice/die, password), runs the matching tool, and returns the result, or returns `None` if no matching tool is found.
-*   **`test_tool_manager.py`**: Test script validating intent detection and tool routing logic across different sample user queries.
-*   **`use_tools.py`**: Terminal-based AI assistant demonstrating early tool integration with teacher persona selection (Maths, Physics, Chemistry). Intercepts tool requests (`time`, `roll dice`, `generate password`) before calling the LLM, preserves conversation history, and outputs full chat logs upon typing `"exit"`.
-*   **`assistant.py`**: An interactive multi-persona AI assistant offering 5 selectable roles (Teacher, Python Expert, Travel Guide, Motivational Coach, Interviewer). Combines instant tool execution for time, dice, and password requests with contextual LLM conversation memory until `"quit"`.
+### Root files
 
-### `Day05(Document_reading)/`
-This folder adds document reading capabilities to the AI assistant, allowing it to read, summarize, and explain `.txt` files from a local `Data/` folder.
-*   **`tools.py`**: Extends the tool set from Day 04 with a new `read_text_file(filename)` function that reads and returns the contents of a text file, with `FileNotFoundError` handling. Retains the existing `get_current_time()`, `roll_dice()`, and `generate_password()` tools.
-*   **`tool_manager.py`**: Same keyword-based tool router as Day 04 — dispatches `time`, `dice`, and `password` requests. Document commands (`summarize`, `explain`) are handled directly in `assistant.py` rather than through this router.
-*   **`test_file_tool.py`**: Quick standalone test to verify `read_text_file()` works by reading `data/python.txt`.
-*   **`test_tool_manager.py`**: Test script validating tool routing for time, dice, password, and verifying that non-tool queries (e.g., `"Explain Python"`, `"summarise"`) return `None`.
-*   **`assistant.py`**: The main interactive assistant — combines all previous features (persona selection, conversation memory, tool execution, markdown stripping) with two new document commands:
-    *   `summarize <filename>`: Reads the specified `.txt` file from the `Data/` folder and asks the AI to summarize it.
-    *   `explain <filename>`: Reads the specified `.txt` file and asks the AI to explain it in detail.
-    Both commands inject the file content into the conversation history so the AI can answer follow-up questions about the document.
-*   **`Data/`**: Folder containing sample text files for the assistant to read:
-    *   `notes.txt`: A sample notes document.
-    *   `project.txt`: A sample project specification document (Smart Library System).
-
-### Root Files & Utilities
-*   **`start_mlx_server.py`**: Helper script to launch a local MLX model server (hosting `Qwen/Qwen3-1.7B-MLX-4bit` on Apple Silicon) exposing an OpenAI-compatible API on port 8080.
-*   **`lmx_testing.py`**: Test script for verifying local model inference directly via `mlx_lm.load` and `mlx_lm.generate`.
-*   **`requirements.txt`**: Contains all installed Python packages and dependencies for the project.
-*   **`pyrefly.toml`**: Environment and type-checker configuration.
-*   **`git.txt`**: Quick reference cheat-sheet for daily git workflow commands.
-
-### `.venv/`
-*   The virtual environment folder where all installed Python packages (like `openai` and `python-dotenv`) are kept separate from your main system.
-
-### `.vscode/`
-*   Contains settings and preferences for VS Code (kept on your computer and ignored by Git).
+- `.envexample`: Example environment configuration; copy and adapt it for local use.
+- `.gitignore`: Excludes local or generated files from Git.
+- `.mcp.json`: MCP server configuration.
+- `.python-version`: Project Python version setting.
+- `LICENSE`: MIT license.
+- `README.md`: Project overview, architecture, capabilities, and setup notes.
+- `embedding.py`: Embedding and retrieval implementation.
+- `mlx_testing.py`: Example local MLX model inference script.
+- `project_index.md`: This tracked-file index and Git workflow guide.
+- `pyproject.toml`: Python project and build configuration.
+- `pyrefly.toml`: Pyrefly type-checker configuration.
+- `requirements.txt`: Python dependencies.
+- `skills-lock.json`: Skill dependency lockfile.
+- `start_mlx_server.py`: Starts a local MLX model server.
 
 ---
 
