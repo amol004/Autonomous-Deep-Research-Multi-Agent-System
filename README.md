@@ -172,23 +172,22 @@ For Word document extraction, install the optional parser:
 python -m pip install python-docx
 ```
 
-Create a `.env` file in the repository root and configure the model endpoint and model names available in your runtime:
+From the repository root, create `.env` from [the example](.envexample) if you do not already have a `.env` file:
 
-```dotenv
-BASE_URL=http://localhost:11434/v1
-API_KEY=ollama
-MODEL=your-chat-model
-EMBEDDING_MODEL=embeddinggemma-2:740m
+```bash
+cp .envexample .env
 ```
 
-Ollama is the default local endpoint for chat and embeddings. On an Apple Silicon Mac, `python start_mlx_server.py` starts the included MLX-LM chat server on port 8080. Use the Ollama endpoint for embedding generation. Keep API keys in `.env` and do not commit that file.
+The example points to Ollama’s local OpenAI-compatible endpoint. Use `ollama list` to find the name of an installed chat model, then set `MODEL` in `.env` to that name. For the document embedding utility, install the example embedding model with `ollama pull embeddinggemma-2:740m`.
+
+On an Apple Silicon Mac, `python start_mlx_server.py` starts the included MLX-LM chat server on port 8080. To use it for chat, set `BASE_URL=http://localhost:8080/v1` in `.env` and choose the chat model served by MLX-LM. Keep `BASE_URL` pointed at Ollama when running `embedding.py`. Keep real API keys in `.env`.
 
 ## Local utilities
 
 Generate embeddings for a supported document:
 
 ```bash
-python embedding.py "path/to/document.pdf"
+python embedding.py "Day05(Document_reading)/Data/sample.pdf"
 ```
 
 Start the included Apple Silicon chat server:
