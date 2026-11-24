@@ -1,21 +1,5 @@
-# Dummy .envexample file (values are intentionally obfuscated)
-
-# Google Cloud credentials
-GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/credentials.json
-GOOGLE_PROJECT_ID=your-project-id
-
-# Database configuration
-DATABASE_URL=postgresql://user:****@db-host:5432/your-db-name
-DB_USERNAME=your-db-username
-DB_PASSWORD=****
-
-# API keys and secrets
-API_KEY=****
-ANOTHER_SECRET=****
-
-# Application settings
-DEBUG=False
-PORT=8000
-
-# Add any additional environment variables your application requires below.
-# KEY=VALUE
+# Local Ollama configuration. Copy this file to .env and set MODEL.
+BASE_URL=http://localhost:11434/v1
+API_KEY=ollama
+MODEL=your-chat-model
+EMBEDDING_MODEL=embeddinggemma-2:740m
